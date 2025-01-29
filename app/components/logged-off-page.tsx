@@ -1,3 +1,5 @@
+"use client"
+
 import { Heart, Image, MessageCircle, Users, Zap } from "lucide-react"
 import Link from "next/link"
 
@@ -8,10 +10,10 @@ export default function LoggedOffPage({ onLogin }: { onLogin: () => void }) {
         <div className="text-center">
           <Heart className="mx-auto h-12 w-12 text-red-500" />
           <h1 className="mt-4 text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
-            Welcome to nossarede.org
+            Bem vindo a nossarede.org
           </h1>
           <p className="mt-3 text-xl text-gray-500 dark:text-gray-300 sm:mt-4">
-            Connect, share, and discover with our vibrant community
+            Conecte, compartilhe, converse, crie e participe de comunidades...
           </p>
         </div>
 
@@ -19,23 +21,23 @@ export default function LoggedOffPage({ onLogin }: { onLogin: () => void }) {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
               icon={<Image className="h-6 w-6" />}
-              title="Share Your Moments"
-              description="Post photos and videos to share your life with friends and followers."
+              title="Compartilhe seus momentos"
+              description="Publique fotos e vídeos e compartilhe-os com seus amigos e seguidores."
             />
             <FeatureCard
               icon={<MessageCircle className="h-6 w-6" />}
-              title="Engage in Conversations"
-              description="Comment on posts, reply to others, and have meaningful discussions."
+              title="Participe de conversas"
+              description="Comente em publicações, responda para outros e tenha conversas que importam."
             />
             <FeatureCard
               icon={<Users className="h-6 w-6" />}
-              title="Build Your Network"
-              description="Follow friends, family, and interesting people to grow your network."
+              title="Crie conexões"
+              description="Siga amigos, família e pessoas interessantes para crescer sua rede."
             />
             <FeatureCard
               icon={<Zap className="h-6 w-6" />}
-              title="Discover Trending Content"
-              description="Explore popular posts and stay updated with the latest trends."
+              title="Descubra tendências"
+              description="Explore conteúdos relevantes e fique atualizado com as últimas tendências."
             />
           </div>
         </div>
