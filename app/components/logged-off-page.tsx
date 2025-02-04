@@ -1,6 +1,6 @@
 "use client"
 
-import { Image, UserPen, Users, Zap } from "lucide-react"
+import { Image, UserPen, Users } from "lucide-react"
 import Link from "next/link"
 import Logo from "./logo";
 

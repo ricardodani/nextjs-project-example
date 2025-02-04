@@ -3,7 +3,7 @@
 import Button from "next/link"
 import Logo from "./logo";
 
-export default function Header({ isLoggedIn = false, onLogin }: { isLoggedIn?: boolean; onLogin: () => void }) {
+export default function Header() {
 
   return (
     <header className="bg-white bg-opacity-80 backdrop-blur-md shadow-sm sticky top-0 z-10 py-4">
