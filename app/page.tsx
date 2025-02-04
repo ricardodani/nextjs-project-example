@@ -2,9 +2,8 @@
 
 import { useState } from "react"
 import Header from "./components/header"
-import Feed from "./components/feed"
-import Sidebar from "./components/sidebar"
 import LoggedOffPage from "./components/logged-off-page"
+import LoggedInPage from "./components/logged-in-page"
 
 export default function Home() {
 
@@ -19,10 +18,7 @@ export default function Home() {
       <Header isLoggedIn={isLoggedIn} onLogin={handleLogin} />
       <main className="container mx-auto pt-24 px-4 sm:px-6 lg:px-8">
         {isLoggedIn ? (
-          <div className="flex flex-col md:flex-row gap-8">
-            <Feed />
-            <Sidebar />
-          </div>
+          <LoggedInPage />
         ) : (
           <LoggedOffPage onLogin={handleLogin} />
         )}

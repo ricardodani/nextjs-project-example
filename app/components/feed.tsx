@@ -105,7 +105,7 @@ export default function Feed() {
   return (
     <div className="w-full md:w-2/3 space-y-8">
       {posts.map((post) => (
-        <div key={post.id} className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md">
+        <div key={post.id} className="bg-white border border-gray-200 rounded-md">
           <div className="flex items-center p-4">
             <div className="relative">
               <img className="h-10 w-10" src={`/placeholder.svg?height=40&width=40&text=${post.user}`} alt={post.user} />
@@ -113,7 +113,7 @@ export default function Feed() {
                 <div className="absolute inset-0 rounded-full border-2 border-green-500"></div>
               )}
             </div>
-            <span className="ml-3 font-semibold text-gray-900 dark:text-white">{post.user}</span>
+            <span className="ml-3 font-semibold text-gray-900 ">{post.user}</span>
           </div>
           <div className="relative">
             <img 
@@ -145,38 +145,38 @@ export default function Feed() {
               <div className="flex space-x-4">
                 <button onClick={() => handleLike(post.id)} className="flex items-center space-x-1">
                   <Heart className={`h-6 w-6 ${post.likes % 2 === 0 ? 'text-gray-500' : 'text-red-500 fill-current'}`} />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{post.likes}</span>
+                  <span className="text-sm text-gray-600 ">{post.likes}</span>
                 </button>
                 <button className="flex items-center space-x-1">
                   <MessageCircle className="h-6 w-6 text-gray-500" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{post.comments.length}</span>
+                  <span className="text-sm text-gray-600">{post.comments.length}</span>
                 </button>
                 <button className="flex items-center space-x-1">
                   <Send className="h-6 w-6 text-gray-500" />
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{post.shares}</span>
+                  <span className="text-sm text-gray-600">{post.shares}</span>
                 </button>
               </div>
               <Bookmark className="h-6 w-6 text-gray-500" />
             </div>
-            <p className="text-gray-900 dark:text-white"><span className="font-semibold">{post.user}</span> {post.caption}</p>
+            <p className="text-gray-900 "><span className="font-semibold">{post.user}</span> {post.caption}</p>
             <div className="mt-4 space-y-4">
               {post.comments.map((comment) => (
                 <div key={comment.id} className="space-y-2">
                   <div className="flex items-start space-x-2">
                     <img className="h-8 w-8" src={`/placeholder.svg?height=32&width=32&text=${comment.user}`} alt={comment.user} />
                     <div className="flex-1">
-                      <p className="text-sm text-gray-900 dark:text-white">
+                      <p className="text-sm text-gray-900 ">
                         <span className="font-semibold">{comment.user}</span> {comment.content}
                       </p>
                       <div className="flex items-center space-x-2 mt-1">
                         <button 
                           onClick={() => handleCommentLike(post.id, comment.id)}
-                          className="text-xs text-gray-500 dark:text-gray-400"
+                          className="text-xs text-gray-500"
                         >
                           Like
                         </button>
-                        <span className="text-xs text-gray-500 dark:text-gray-400">{comment.likes} likes</span>
-                        <button className="text-xs text-gray-500 dark:text-gray-400">Reply</button>
+                        <span className="text-xs text-gray-500">{comment.likes} likes</span>
+                        <button className="text-xs text-gray-500">Reply</button>
                       </div>
                     </div>
                   </div>
@@ -185,7 +185,7 @@ export default function Feed() {
                       {comment.subComments.map((subComment) => (
                         <div key={subComment.id} className="flex items-start space-x-2">
                           <img className="h-6 w-6" src={`/placeholder.svg?height=24&width=24&text=${subComment.user}`} alt={subComment.user} />
-                          <p className="text-sm text-gray-900 dark:text-white">
+                          <p className="text-sm text-gray-900">
                             <span className="font-semibold">{subComment.user}</span> {subComment.content}
                           </p>
                         </div>
